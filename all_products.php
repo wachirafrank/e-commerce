@@ -76,7 +76,7 @@ require "functions/functions.php";
             </div>
         </div>
         <div id="footer">
-            <h2> &copy; 2018 by Muhammad Ali Makhdoom</h2>
+            <h2> &copy; 2019 by Frank W. Wachira</h2>
         </div>
     </div>
 </body>

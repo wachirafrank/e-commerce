@@ -134,8 +134,8 @@ require "functions/functions.php";
                                             <td><input size="2" name="qty[]" value="<?php echo $pro_qty;?>">
                                                 <input name="product_id[]" type="hidden" value="<?php echo $pro_id;?>">
                                             </td>
-                                            <td><?php echo "Rs " . $pro_price . "/-"; ?></td>
-                                            <td><?php echo "Rs " . $pro_price_all_items . "/-"; ?></td>
+                                            <td><?php echo "Ksh " . $pro_price . "/-"; ?></td>
+                                            <td><?php echo "Ksh " . $pro_price_all_items . "/-"; ?></td>
                                         </tr>
                                         <?php
                                     }
@@ -144,7 +144,7 @@ require "functions/functions.php";
 
                             <tr align="right">
                                 <td colspan="4"><b>Sub Total:</b></td>
-                                <td><?php echo "Rs ".$total."/-"; ?></td>
+                                <td><?php echo "Ksh ".$total."/-"; ?></td>
                             </tr>
                             <tr align="center">
                                 <td colspan="2"><input type="submit" name="update_cart" value="Update Cart"></td>
@@ -163,7 +163,7 @@ require "functions/functions.php";
             </div>
         </div>
         <div id="footer">
-            <h2> &copy; 2018 by Muhammad Ali Makhdoom</h2>
+            <h2> &copy; 2019 by Frank W. Wachira</h2>
         </div>
     </div>
 </body>

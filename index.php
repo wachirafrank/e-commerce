@@ -6,7 +6,7 @@ require "functions/functions.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Online Shop</title>
+    <title>E-Commerce Site</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <body>
@@ -22,7 +22,7 @@ require "functions/functions.php";
                 <li><a href="my_account.php">My Account</a></li>
                 <li><a href="#">Sign Up</a></li>
                 <li><a href="cart.php">Cart</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
             </ul>
             <div id="form">
                 <form method="get" action="results.php">
@@ -48,10 +48,13 @@ require "functions/functions.php";
                     <span style="float: right;
                     font-size: 18px; padding: 5px;line-height: 40px;">
                         <?php
-                        if(!isset($_SESSION['customer_email']))
-                            echo "Welcome guest!";
-                        else
-                            echo "Welcome ".$_SESSION['customer_email'];
+                        if(!isset($_SESSION['customer_email'])){
+                          echo "Welcome guest!";
+                        }
+
+                        else {
+                          echo "Welcome ".$_SESSION['customer_email'];
+                        }
                          ?>
                         <b style="color: yellow">
                             Shopping Cart - </b>
@@ -60,7 +63,7 @@ require "functions/functions.php";
                         <a style="color: yellow" href="cart.php">Go to Cart</a>
 
                         <?php
-                            if(!isset($_SESSION['customer_email'])){
+                            if(!isset($_SESSION['customer_email'])){ //if we aren't logged in ...
                                 echo "<a style='color: orange;' href='checkout.php'>Login</a>";
                             }
                             else{
@@ -76,7 +79,7 @@ require "functions/functions.php";
             </div>
         </div>
         <div id="footer">
-            <h2> &copy; 2018 by Muhammad Ali Makhdoom</h2>
+            <h2> &copy; 2019 by Frank W. Wachira</h2>
         </div>
     </div>
 </body>

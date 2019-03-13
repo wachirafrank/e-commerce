@@ -2,11 +2,13 @@
 session_start();
 include ('functions/db_connect.php');
 $error_msg = '';
-if(isset($_POST['login'])){
+if(isset($_POST['login'])){ //if the submit button has been hit...
     $email = $_POST['user_email'];
     $pass = $_POST['user_pass'];
     $sel_user = "select * from admins where user_email='$email' AND user_pass='$pass'";
+    var_dump($sel_user);
     $run_user = mysqli_query($con, $sel_user);
+    var_dump($run_user);
     $check_user = mysqli_num_rows($run_user);
     if($check_user==0){
         $error_msg = 'Password or Email is wrong, try again';
@@ -40,7 +42,7 @@ if(isset($_POST['login'])){
     <form class="login_form" action="login.php" method="post">
         <h2 class="text-danger"><?php echo @$_GET['not_admin']?></h2>
         <h2 class="text-primary"><?php echo @$_GET['logged_out']?></h2>
-        <h3 class="m-3">Admin Login </h3>
+        <h3 class="m-3">Admin Login</h3>
         <div><?php echo $error_msg;?></div>
         <input type="text" id="user_email" name="user_email"
                value="<?php echo @$_COOKIE['user_email']?>" class="form-control" placeholder="Email address" required autofocus>
@@ -56,6 +58,3 @@ if(isset($_POST['login'])){
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-

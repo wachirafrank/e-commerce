@@ -3,7 +3,7 @@ require "./includes/db_connetion.php";
 
 //getting Categories
 function getCats(){
-    global $con;
+    global $con; //reference the db connection
     $get_cats = "select * from categories";
     $run_cats = mysqli_query($con, $get_cats);
     while ($row_cats= mysqli_fetch_array($run_cats)){
@@ -18,13 +18,14 @@ function getBrands(){
     global $con;
     $get_brands = "select * from brands";
     $run_brands = mysqli_query($con, $get_brands);
+    // return an array (either numeric or assoc )corresponding to the fetched row/record
     while ($row_brands= mysqli_fetch_array($run_brands)){
         $brand_id = $row_brands['brand_id'];
         $brand_title = $row_brands['brand_title'];
         echo "<li><a href='index.php?brand=$brand_id'> $brand_title </a></li>";
     }
 }
-
+// fetch products ...
 function getPro($flag = ''){
     global $con;
     $get_pro = "";
@@ -59,7 +60,7 @@ function getPro($flag = ''){
                 <div class='single_product'>
                     <h3>$pro_title</h3>
                     <img src='admin/product_images/$pro_image' width='180' height='180'>
-                    <p> <b> Rs $pro_price/-  </b> </p>
+                    <p> <b> Ksh $pro_price/-  </b> </p>
                     <a href='details.php?pro_id=$pro_id' style='float: left'>Details</a>
                     <a href='index.php?add_cart=$pro_id'><button style='float: right;'>Add to Cart</button></a>
                 </div>
@@ -125,5 +126,5 @@ function total_price(){
             $total += $pro_price_all_items;
         }
     }
-    echo 'Rs '.$total.'/-';
+    echo 'Ksh '.$total.'/-';
 }

@@ -4,6 +4,7 @@ if(!isset($_SESSION['user_email'])){
 }
 if(isset($_GET['del_cat'])){
     $del_id = $_GET['del_cat'];
+    var_dump($del_id);
     $del_pro = "delete from categories where cat_id='$del_id'";
     $run_del = mysqli_query($con,$del_pro);
     if($run_del){
